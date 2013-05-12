@@ -1,0 +1,50 @@
+
+
+.aside-front, .aside-left, .aside-right {
+  position: absolute;
+}
+
+.aside-front {
+  -webkit-transform:translate3d(0,0,0);
+  z-index: 2;
+  width:100%;
+  height:100%;
+  left: 0%;
+
+  -webkit-transition: -webkit-transform 0.5s linear;
+}
+
+.aside-left, .aside-right {
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+
+  left: 0px;
+
+
+  width: 60%;
+}
+
+
+.aside-container.has-aside-right > .aside-front {
+
+  border-left: 1px solid rgba(0, 0, 0, 0.9);
+  -webkit-box-shadow: -1px 0px 20px 0 rgba(0,0,0,0.8);
+
+}
+
+.aside-container.has-aside-left > .aside-front {
+
+  border-right: 1px solid rgba(0, 0, 0, 0.9);
+  -webkit-box-shadow: 1px 0px 20px 0 rgba(0,0,0,0.8);
+
+}
+
+
+
+.aside-container.is-aside-left > .aside-front {
+  -webkit-transform:translate3d(60%,0,0);
+}
+

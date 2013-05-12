@@ -1,0 +1,20 @@
+
+.scroller {
+  -webkit-overflow-scrolling: touch;
+}
+
+.scroller::-webkit-scrollbar {
+  display: none; 
+}
+
+.scroller {
+  overflow-y: auto;
+}
+
+.scroller-container {
+  min-height: 100%;
+}
+
+.fix-scrolling-touch {
+  -webkit-transform: translateZ(0px);
+}

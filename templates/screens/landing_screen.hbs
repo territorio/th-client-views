@@ -1,5 +1,84 @@
-<div class="main">
+{{#with view}}
 
-  starting---
+<div class="aside-left">
+
+  {{#view Th.ScrollerView class="topcoat-list scroll-container" 
+    tagName="ul" }}
+
+    {{#view Th.CategoryView class="topcoat-list__item category-item" 
+        tagName="li" 
+        content="todos"
+        selectedBinding="view._parentView._parentView.selectedCategory" }}
+        Todos
+     {{/view}}
+
+    {{#each category in categories}}
+
+      {{#view Th.CategoryView class="topcoat-list__item category-item" 
+          tagName="li" 
+          contentBinding="category"
+          selectedBinding="view._parentView._parentView.selectedCategory" }}
+              {{category.name}}
+      {{/view}}
+    {{/each}}
+  {{/view}}
 
 </div>
+
+<div class="aside-front">
+
+  <div id="landing-header" class="light-header-bar">
+
+    {{view Th.TapView class="header-button is-left icon-reorder" 
+    action="goToCategory"}}
+
+    <div class="logo-header"></div>
+
+    {{view Th.TapView class="header-button is-right icon-calendar" 
+      action="goToCalendar"}}
+
+  </div>
+
+  {{#view Th.ScrollerView class="topcoat-list__container scroll-container" 
+    exclude="landing-header" }}
+
+    {{#if events.isLoaded}}
+
+      <ul class="topcoat-list">
+
+          {{#each event in events}}
+            {{#view Th.EventView class="event-item topcoat-list__item" tagName="li" }}
+
+                <div class="event-title">
+
+                  <div class="event-left">
+                    {{event.title}}
+                  </div>
+
+                  <div class="event-right">
+                    {{#if view.isContentVisible }}
+                      <div class="event-toggle-icon icon-chevron-sign-up"></div>
+                    {{else}}
+                      <div class="event-toggle-icon icon-chevron-sign-down"></div>
+                    {{/if}}
+                  </div>
+
+                </div>
+                <div class="event-content">
+                  {{{event.content}}}
+                </div>
+            {{/view}}
+          {{/each}}
+
+      </ul>
+
+    {{else}}
+
+          <div class="spinner"></div>
+
+          {{/if}}
+
+  </div>
+
+{{/view}}
+{{/with}}
