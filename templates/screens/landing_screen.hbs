@@ -25,7 +25,8 @@
 
 </div>
 
-<div class="aside-front">
+{{#view Th.LandingAsideFrontView class="aside-front" 
+  action="closeCategory" }}
 
   <div id="landing-header" class="light-header-bar header">
 
@@ -82,9 +83,11 @@
 
           <div class="spinner"></div>
 
-          {{/if}}
-
-  </div>
+    {{/if}}
 
 {{/view}}
+
+{{/view}}
+
+
 {{/with}}
