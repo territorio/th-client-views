@@ -64,31 +64,47 @@
   -webkit-animation: fadeIn 0.5s;
 }
 
+.header {
+  position: relative;
 
+}
+
+.header-block {
+  display: table-cell;
+  vertical-align: middle;
+  height: 3.9000000000000004rem;
+}
+.header-block.is-right, .header-block.is-left {
+}
+
+.header-block.is-middle {
+  width: 100%;
+}
 
 .header-button {
-  position: absolute;
-  line-height: 3.9000000000000004rem;
 
   font-size: 1.5em;
 }
 
 .header-button.is-left {
-  left: 10px;
+  float: left;
+  margin-left: 10px;
 }
 
 .header-button.is-right {
-  right: 10px;
+
+  float: right;
+  margin-right: 10px;
 }
 
 
 .logo-header {
 
   background-image: url('../img2/header_logo.png');
-  width: 180px;
+  width: 200px;
   height: 48px;
 
-  background-size: 180px 48px;
+  background-size: 200px 48px;
 
   margin: 0 auto;
 

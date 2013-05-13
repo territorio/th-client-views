@@ -27,15 +27,21 @@
 
 <div class="aside-front">
 
-  <div id="landing-header" class="light-header-bar">
+  <div id="landing-header" class="light-header-bar header">
 
-    {{view Th.TapView class="header-button is-left icon-reorder" 
-    action="goToCategory"}}
+    <div class="header-block is-left">
+      {{view Th.TapView class="header-button is-left icon-reorder" 
+      action="goToCategory"}}
+    </div>
 
-    <div class="logo-header"></div>
+    <div class="header-block is-middle">
+      <div class="logo-header"></div>
+    </div>
 
-    {{view Th.TapView class="header-button is-right icon-calendar" 
-      action="goToCalendar"}}
+    <div class="header-block is-right">
+      {{view Th.TapView class="header-button is-right icon-calendar" 
+        action="goToCalendar"}}
+    </div>
 
   </div>
 
