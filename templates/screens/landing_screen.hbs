@@ -49,35 +49,44 @@
   {{#view Th.ScrollerView class="topcoat-list__container scroll-container" 
     exclude="landing-header" }}
 
-    {{#if events.isLoaded}}
+    {{#if isEventLoaded }}
 
-      <ul class="topcoat-list">
+      {{#if events.length }}
 
-          {{#each event in events}}
-            {{#view Th.EventView class="event-item topcoat-list__item" tagName="li" }}
+        <ul class="topcoat-list">
 
-                <div class="event-title">
+            {{#each event in events}}
+              {{#view Th.EventView class="event-item topcoat-list__item" tagName="li" }}
 
-                  <div class="event-left">
-                    {{event.title}}
+                  <div class="event-title">
+
+                    <div class="event-left">
+                      {{event.title}}
+                    </div>
+
+                    <div class="event-right">
+                      {{#if view.isContentVisible }}
+                        <div class="event-toggle-icon icon-chevron-sign-up"></div>
+                      {{else}}
+                        <div class="event-toggle-icon icon-chevron-sign-down"></div>
+                      {{/if}}
+                    </div>
+
                   </div>
-
-                  <div class="event-right">
-                    {{#if view.isContentVisible }}
-                      <div class="event-toggle-icon icon-chevron-sign-up"></div>
-                    {{else}}
-                      <div class="event-toggle-icon icon-chevron-sign-down"></div>
-                    {{/if}}
+                  <div class="event-content">
+                    {{{event.content}}}
                   </div>
+              {{/view}}
+            {{/each}}
 
-                </div>
-                <div class="event-content">
-                  {{{event.content}}}
-                </div>
-            {{/view}}
-          {{/each}}
+        </ul>
 
-      </ul>
+      {{else}}
+
+          <div class="empty-text">Lo sentimos, no hay eventos para el día y categoría seleccionadas</div>
+
+
+      {{/if}}
 
     {{else}}
 
