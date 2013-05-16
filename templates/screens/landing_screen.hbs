@@ -30,19 +30,22 @@
 
   <div id="landing-header" class="light-header-bar header">
 
-    <div class="header-block is-left">
-      {{view Th.TapView class="header-button is-left icon-reorder" 
+
+    {{#view Th.TapView class="header-block is-left" 
       action="goToCategory"}}
-    </div>
+      <div class="header-button is-left icon-reorder"></div>
+    {{/view}}
 
     <div class="header-block is-middle">
-      <div class="logo-header"></div>
+      <div class="logo-layout">
+        <div class="logo-header"></div>
+      </div>
     </div>
 
-    <div class="header-block is-right">
-      {{view Th.TapView class="header-button is-right icon-calendar" 
-        action="goToCalendar"}}
-    </div>
+    {{#view Th.TapView class="header-block is-right" 
+      action="goToCalendar"}}
+      <div class="header-button is-right icon-calendar"></div>
+    {{/view}}
 
   </div>
 
@@ -66,9 +69,9 @@
 
                     <div class="event-right">
                       {{#if view.isContentVisible }}
-                        <div class="event-toggle-icon icon-chevron-sign-up"></div>
+                        <div class="event-toggle-icon icon-collapse-alt"></div>
                       {{else}}
-                        <div class="event-toggle-icon icon-chevron-sign-down"></div>
+                        <div class="event-toggle-icon icon-expand-alt"></div>
                       {{/if}}
                     </div>
 
@@ -83,7 +86,7 @@
 
       {{else}}
 
-          <div class="empty-text">Lo sentimos, no hay eventos para el día y categoría seleccionadas</div>
+          <div class="empty-text">Lo sentimos, no hay eventos para el día y categoría seleccionadas <span class="icon-frown"></span></div>
 
 
       {{/if}}

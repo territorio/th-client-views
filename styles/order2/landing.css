@@ -60,3 +60,14 @@
   -webkit-animation: fadeIn 0.5s;
 }
 
+.empty-text {
+
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 35%;
+
+}
+
+.topcoat-list {
+	border-top: none;
+}
