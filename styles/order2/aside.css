@@ -11,7 +11,7 @@
   height:100%;
   left: 0%;
 
-  -webkit-transition: -webkit-transform 0.5s linear;
+  -webkit-transition: -webkit-transform 0.3s linear;
 }
 
 .aside-left, .aside-right {
