@@ -49,8 +49,16 @@
 
   </div>
 
+  <div id="show-info"> 
+    <div id="show-info-content"> 
+
+      {{humanize dateBinding="selectedDate"}}
+
+    </div>
+  </div>
+
   {{#view Th.ScrollerView class="topcoat-list__container scroll-container" 
-    exclude="landing-header" }}
+    exclude="landing-header show-info" }}
 
     {{#if isEventLoaded }}
 

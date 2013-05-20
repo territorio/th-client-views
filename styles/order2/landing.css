@@ -13,12 +13,31 @@
 
 }
 
-.event-item:active {
+.event-item.is-tap {
 
    background-color: #BBBEBB;
 
 }
 
+#show-info {
+
+border-top: 1px solid #bcbfbf;
+border-bottom: 1px solid #bcbfbf;
+background-color: #dfe2e2;
+
+
+
+}
+
+#show-info-content {
+
+  border-top: 1px solid #eff1f1;
+  padding: 0.5em 1em 0.5em 0;
+  font-size: 0.8em;
+  font-style: italic;
+  text-align: right;
+
+}
 
 .event-title {
 	position: relative;
@@ -68,6 +87,7 @@
 
 }
 
-.topcoat-list {
+.topcoat-list, .topcoat-list__container {
 	border-top: none;
 }
+
