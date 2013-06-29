@@ -1,0 +1,77 @@
+
+
+.icon-home {}
+.category-icon.icon-all:before {
+	content: "\f015";
+}
+
+
+.icon-film {}
+.category-icon.icon-cine:before {
+	content: "\f008";
+}
+
+.icon-trophy {}
+.category-icon.icon-deporte:before {
+	content: "\f091";
+}
+
+.icon-picture {}
+.category-icon.icon-exposicion:before {
+	content: "\f03e";
+}
+
+.icon-glass {}
+.category-icon.icon-tradicion:before {
+content: "\f000";
+}
+
+.icon-shopping-cart {}
+.category-icon.icon-mercado:before {
+	content: "\f07a";
+}
+
+.icon-smile {}
+.category-icon.icon-infantil:before {
+content: "\f118";
+}
+
+.icon-book {}
+.category-icon.icon-literatura:before {
+content: "\f02d";
+}
+
+.icon-music {}
+.category-icon.icon-musica:before {
+content: "\f001";
+}
+
+
+.icon-globe {}
+.category-icon.icon-naturaleza:before {
+content: "\f0ac";
+}
+
+.icon-bullhorn {}
+.category-icon.icon-taller:before {
+	content: "\f0a1";
+}
+
+
+.icon-microphone {}
+.category-icon.icon-teatro:before {
+	content: "\f130";
+}
+
+
+.icon-eye-open {}
+.category-icon.icon-visitas:before {
+
+	content: "\f06e";
+}
+
+
+
+
+
+

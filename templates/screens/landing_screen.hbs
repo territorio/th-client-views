@@ -9,7 +9,11 @@
         tagName="li" 
         content="todos"
         selectedBinding="view._parentView._parentView.selectedCategory" }}
-        Todos
+
+        <i class="category-icon icon-all"></i>
+        <div class="category-item-desc">
+          Todos 
+        </div>
      {{/view}}
 
     {{#each category in categories}}
@@ -18,7 +22,12 @@
           tagName="li" 
           contentBinding="category"
           selectedBinding="view._parentView._parentView.selectedCategory" }}
-              {{category.name}}
+
+
+          {{view Th.FontIconView tagName="i" categoryBinding="category"}}
+          <div class="category-item-desc">
+            {{category.name}}
+          </div>
       {{/view}}
     {{/each}}
   {{/view}}
@@ -70,6 +79,10 @@
                   <div class="event-title">
 
                     <div class="event-left">
+                      {{view Th.FontIconView tagName="i" eventBinding="event"}}
+                    </div>
+
+                    <div class="event-middle">
                       {{event.title}}
                     </div>
 
