@@ -21,14 +21,14 @@
 	content: "\f03e";
 }
 
-.icon-glass {}
+.icon-globe {}
 .category-icon.icon-tradicion:before {
-content: "\f000";
+content: "\f0ac";
 }
 
-.icon-shopping-cart {}
+.icon-food {}
 .category-icon.icon-mercado:before {
-	content: "\f07a";
+	content: "\f0f5";
 }
 
 .icon-smile {}
@@ -47,9 +47,9 @@ content: "\f001";
 }
 
 
-.icon-globe {}
+.icon-leaf {}
 .category-icon.icon-naturaleza:before {
-content: "\f0ac";
+	content: "\f06c";
 }
 
 .icon-bullhorn {}
