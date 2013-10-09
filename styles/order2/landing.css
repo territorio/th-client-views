@@ -42,19 +42,32 @@
 
 #show-info {
 
+border-top: 1px solid #eff1f1;
 border-bottom: 1px solid #A6A6A6;
 background-color: #BBBEBB;
 
-
+padding: 0.5em 0em;
+display: table;
+width: 100%;
 
 }
 
-#show-info-content {
-  border-top: 1px solid #eff1f1;
-  padding: 0.5em 1em 0.5em 0;
+#show-info-date,
+#show-info-category {
   font-size: 0.8em;
   font-style: italic;
+	display: table-cell;
+	width: 50%;
+}
+
+#show-info-category {
+  text-align: left;
+	padding-left: 0.5em;
+}
+
+#show-info-date {
   text-align: right;
+	padding-right: 0.5em;
 }
 
 .event-title {
