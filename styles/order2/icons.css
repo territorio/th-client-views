@@ -65,10 +65,23 @@ content: "\f001";
 
 
 .icon-eye-open {}
-.category-icon.icon-visitas:before {
+.category-icon.icon-ocio:before {
 
 	content: "\f06e";
 }
+
+
+.icon-map-marker {}
+.category-icon.icon-place:before {
+	content: "\f041";
+	color: black;
+}
+
+
+
+
+
+
 
 
 

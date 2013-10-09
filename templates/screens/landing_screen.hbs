@@ -30,6 +30,18 @@
           </div>
       {{/view}}
     {{/each}}
+
+    {{#each place in places}}
+      {{#view Th.PlaceView class="topcoat-list__item category-item" 
+          tagName="li" 
+          contentBinding="place"
+          selectedBinding="view._parentView._parentView.selectedPlace" }}
+          <i class="category-icon icon-place"></i>
+          <div class="category-item-desc">
+            {{place.name}}
+          </div>
+      {{/view}}
+    {{/each}}
   {{/view}}
 
 </div>
@@ -79,7 +91,9 @@
                   <div class="event-title">
 
                     <div class="event-left">
-                      {{view Th.FontIconView tagName="i" eventBinding="event"}}
+                      {{#each category in event.categories}}
+                        {{view Th.FontIconView tagName="i" categoryBinding="category"}}
+                      {{/each}}
                     </div>
 
                     <div class="event-middle">
