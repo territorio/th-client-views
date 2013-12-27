@@ -53,7 +53,7 @@ content: "\f001";
 }
 
 .icon-bullhorn {}
-.category-icon.icon-taller:before {
+.category-icon.icon-cursos:before {
 	content: "\f0a1";
 }
 
@@ -67,7 +67,7 @@ content: "\f001";
 .icon-eye-open {}
 .category-icon.icon-ocio:before {
 
-	content: "\f06e";
+	content: "\f055";
 }
 
 

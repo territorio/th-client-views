@@ -32,9 +32,10 @@
     {{/each}}
 
     {{#each place in places}}
-      {{#view Th.PlaceView class="topcoat-list__item category-item" 
+      {{#view Th.CategoryView class="topcoat-list__item category-item" 
           tagName="li" 
           contentBinding="place"
+          action="selectPlace"
           selectedBinding="view._parentView._parentView.selectedPlace" }}
           <i class="category-icon icon-place"></i>
           <div class="category-item-desc">
@@ -69,10 +70,13 @@
   </div>
 
   <div id="show-info"> 
-    <div id="show-info-content"> 
 
+    <div id="show-info-category"> 
+      {{selectionName}}
+    </div>
+
+    <div id="show-info-date"> 
       {{humanize "selectedDate"}}
-
     </div>
   </div>
 
