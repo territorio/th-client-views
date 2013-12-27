@@ -98,6 +98,9 @@
 
                     <div class="event-middle">
                       {{event.title}}
+                      {{#if event.place}}
+                          <div class="event-place">{{event.place}}</div>
+                      {{/if}}
                     </div>
 
                     <div class="event-right">

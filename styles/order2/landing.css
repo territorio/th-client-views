@@ -5,13 +5,9 @@
 }
 
 .category-item:active, .category-item.is-selected, .category-item.is-active {
-
-   background-color: #BBBEBB;
-   font-weight: bold;
-
+  background-color: #BBBEBB;
+  font-weight: bold;
 }
-
-
 
 .category-item > .category-icon {
 
@@ -34,9 +30,9 @@
 	padding-right: 0.75em;
 }
 
-.event-item.is-tap {
 
-   background-color: #BBBEBB;
+.event-item.is-content-visible {
+
 
 }
 
@@ -75,6 +71,22 @@ background-color: #BBBEBB;
   padding-right: 0.75em;
   padding-left: 0.75em;
   width: 100%;
+}
+
+.event-place {
+  font-weight: normal;
+  font-style: italic;
+  font-size: 0.8rem;
+
+}
+
+
+.event-item.is-content-visible .event-place {
+  display: none;
+}
+
+.event-right {
+  display: none;
 }
 
 .event-right > .event-toggle-icon {
