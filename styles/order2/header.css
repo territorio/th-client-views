@@ -42,6 +42,9 @@
 }
 
 .header-button {
+
+  color: #eff1f1;
+  text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.9);
   font-size: 1.2em;
   line-height: 3.9000000000000004rem;
 }
@@ -82,12 +85,4 @@
 
 }
 
-.icon-calendar, .icon-reorder {
 
-  color: #f2f2f2;
-
-  color: #eff1f1;
-
-  text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.9);
-
-}

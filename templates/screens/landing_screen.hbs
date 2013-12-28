@@ -5,16 +5,18 @@
   {{#view Th.ScrollerView class="topcoat-list scroll-container" 
     tagName="ul" }}
 
-    {{#view Th.CategoryView class="topcoat-list__item category-item" 
-        tagName="li" 
-        content="todos"
-        selectedBinding="view._parentView._parentView.selectedCategory" }}
+    {{#if selectedDate}}
+        {{#view Th.CategoryView class="topcoat-list__item category-item" 
+            tagName="li" 
+            content="todos"
+            selectedBinding="view._parentView._parentView.selectedCategory" }}
 
-        <i class="category-icon icon-all"></i>
-        <div class="category-item-desc">
-          Todos 
-        </div>
-     {{/view}}
+            <i class="category-icon icon-all"></i>
+            <div class="category-item-desc">
+              Todos 
+            </div>
+         {{/view}}
+    {{/if}}
 
     {{#each category in categories}}
 
@@ -62,10 +64,42 @@
       <div class="header-logo-title">Territorio Huelva</div>
     </div>
 
-    {{#view Th.TapView class="header-block is-right" 
-      action="goToDate"}}
-      <div class="header-button is-right icon-calendar"></div>
-    {{/view}}
+    {{#if isSearch}}
+        {{#view Th.TapView class="header-block is-right" 
+          action="selectCalendar"}}
+          <div class="header-button is-right icon-calendar"></div>
+        {{/view}}
+    {{else}}
+        {{#view Th.TapView class="header-block is-right" 
+          action="selectSearch"}}
+          <div class="header-button is-right icon-search"></div>
+        {{/view}}
+    {{/if}}
+
+  </div>
+
+  <div id="action-section"> 
+
+    {{#if isSearch}}
+
+        <div class="search-section">
+            <input class="search-input" type="search" placeholder="Busca eventos y actividades"></input>
+        </div>
+
+    {{else}}
+        <div class="menu-tabs">
+            {{#view Th.TapView class="menu-tab is-left" 
+              action="goToDate"}}
+                Elige día
+                <span class="icon-angle-down"></span>
+            {{/view}}
+            {{#view Th.TapView class="menu-tab is-right" 
+              action="selectComingEvents"}}
+                Próximos
+                <span class="icon-angle-down"></span>
+            {{/view}}
+        </div>
+    {{/if}}
 
   </div>
 
@@ -76,7 +110,11 @@
     </div>
 
     <div id="show-info-date"> 
-      {{humanize "selectedDate"}}
+      {{#if selectedDate}}
+          {{humanize "selectedDate"}}
+      {{else}}
+          Próximos
+      {{/if}}
     </div>
   </div>
 
@@ -100,10 +138,10 @@
                       {{/each}}
                     </div>
 
-                    <div class="event-middle">
+                    <div class="event-middle font-title">
                       {{event.title}}
                       {{#if event.place}}
-                          <div class="event-place">{{event.place}}</div>
+                          <div class="event-place font-default">{{event.place}}</div>
                       {{/if}}
                     </div>
 
@@ -127,7 +165,6 @@
       {{else}}
 
           <div class="empty-text">Lo sentimos, no hay eventos para el día y categoría seleccionadas <span class="icon-frown"></span></div>
-
 
       {{/if}}
 
