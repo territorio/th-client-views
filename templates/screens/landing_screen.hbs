@@ -5,18 +5,20 @@
   {{#view Th.ScrollerView class="topcoat-list scroll-container" 
     tagName="ul" }}
 
-    {{#if selectedDate}}
-        {{#view Th.CategoryView class="topcoat-list__item category-item" 
-            tagName="li" 
-            content="todos"
-            selectedBinding="view._parentView._parentView.selectedCategory" }}
+    {{#unless selectingComingEvents}}
+        {{#if selectedDate}}
+            {{#view Th.CategoryView class="topcoat-list__item category-item" 
+                tagName="li" 
+                content="todos"
+                selectedBinding="view._parentView._parentView.selectedCategory" }}
 
-            <i class="category-icon icon-all"></i>
-            <div class="category-item-desc">
-              Todos 
-            </div>
-         {{/view}}
-    {{/if}}
+                <i class="category-icon icon-all"></i>
+                <div class="category-item-desc">
+                  Todos 
+                </div>
+             {{/view}}
+        {{/if}}
+    {{/unless}}
 
     {{#each category in categories}}
 
@@ -83,19 +85,19 @@
     {{#if isSearch}}
 
         <div class="search-section">
-            <input class="search-input" type="search" placeholder="Busca eventos y actividades"></input>
+            {{view Th.SearchInputView tagName="input" class="font-default search-input" type="search" placeholder="Busca eventos y actividades" }}
         </div>
 
     {{else}}
         <div class="menu-tabs">
             {{#view Th.TapView class="menu-tab is-left" 
               action="goToDate"}}
-                Elige día
+                Elige fecha
                 <span class="icon-angle-down"></span>
             {{/view}}
             {{#view Th.TapView class="menu-tab is-right" 
               action="selectComingEvents"}}
-                Próximos
+                Próximamente
                 <span class="icon-angle-down"></span>
             {{/view}}
         </div>
@@ -110,16 +112,12 @@
     </div>
 
     <div id="show-info-date"> 
-      {{#if selectedDate}}
-          {{humanize "selectedDate"}}
-      {{else}}
-          Próximos
-      {{/if}}
+      {{humanize "selectedDate"}}
     </div>
   </div>
 
   {{#view Th.ScrollerView class="topcoat-list__container scroll-container" 
-    exclude="landing-header show-info" }}
+    exclude="landing-header show-info action-section" }}
 
     {{#if isEventLoaded }}
 
@@ -164,7 +162,7 @@
 
       {{else}}
 
-          <div class="empty-text">Lo sentimos, no hay eventos para el día y categoría seleccionadas <span class="icon-frown"></span></div>
+          <div class="empty-text">No hay eventos ni actividades para la búsqueda seleccionada <span class="icon-frown"></span></div>
 
       {{/if}}
 
