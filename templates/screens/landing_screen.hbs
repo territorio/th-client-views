@@ -153,9 +153,12 @@
                     </div>
 
                   </div>
+
+                      {{#if view.isContentVisible }}
                   <div class="event-content">
                     {{{event.content}}}
                   </div>
+                      {{/if}}
               {{/view}}
             {{/each}}
 
